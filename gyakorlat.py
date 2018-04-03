@@ -12,15 +12,13 @@ def file_reading(file_name):
             my_list = item.split(',')
     return my_list
 
+
 def if_input_in_list(guess_char,get_guess):
     typed_char = []
     while True:
         if get_guess in typed_char:
-            print ("Sorry...Try something else")
-            get_guess
-        
-        
-        
+            print("Sorry...Try something else")
+            get_guess()
 
 
 if __name__ == '__main__':
