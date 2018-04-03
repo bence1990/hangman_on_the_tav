@@ -13,12 +13,16 @@ def file_reading(file_name):
     return my_list
 
 
-def if_input_in_list(guess_char,get_guess):
-    typed_char = []
-    while True:
-        if get_guess in typed_char:
-            print("Sorry...Try something else")
-            get_guess()
+def get_guess():
+    guess = ""
+    while len(guess) != 1:
+        guess = input("Write your guess: ")
+    return guess
+
+
+def main():
+    print(random_genearted_word(file_reading("lista.txt")))
+    your_guess = get_guess()
 
 
 if __name__ == '__main__':
