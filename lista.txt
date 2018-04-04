@@ -1,1 +1,1 @@
-owl,dog,cat,dolphin,bull,cow,bee,butterfly,bat,bear
+elephant panda chameleon alligator crocodile turtle bee butterfly giraffe jellyfish
