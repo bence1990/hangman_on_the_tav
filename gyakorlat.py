@@ -35,7 +35,7 @@ def check_guess(random_word, guess):
                 index_list.append(random)
         return index_list
     else:
-        return False
+        return index_list
 
 
 def fill_underscore(index_list, underscore, guess):
@@ -47,38 +47,15 @@ def fill_underscore(index_list, underscore, guess):
     return underscore
 
 
-'''def check_underscore_and_table(underscore, hangman_list):
-    for score in underscore:
-        if '*' in underscore:
-            return True
-'''
-
-
-def printing_board():
-    os.system("clear")
-    hangman_list = [" "," "," "," "," "," "," "," "," "," "," "]
-
-    print(   hangman_list[7],hangman_list[8],hangman_list[9] )
-    print(   hangman_list[6],'             ',hangman_list[10])
-    print(   hangman_list[5]                   )
-    print(   hangman_list[4]                   )
-    print(   hangman_list[3]                   )
-    print(   hangman_list[2]                   )
-    print(   hangman_list[1]                   )
-    print(   hangman_list[0]                   )
-
-
 def main():
     random_word = generate_random_word(read_file("lista.txt"))
-    guess = get_guess()
     underscore = print_underscore(random_word)
-    hangman_list = printing_board()
-    # while check_underscore_and_table(underscore, hangman_list) is False:
-    while check_guess(random_word, guess) is False:
-        print(printing_board())
-        get_guess()
-    index_list = check_guess(random_word, guess)
-    print(fill_underscore(index_list, underscore, guess))
+    counter = 0
+    while counter <= len(random_word):
+        guess = get_guess()
+        index_list = check_guess(random_word, guess)
+        print(fill_underscore(index_list, underscore, guess))
+        counter += 1
 
 
 if __name__ == '__main__':
