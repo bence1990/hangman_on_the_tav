@@ -1,6 +1,4 @@
 import random
-import sys
-import os
 
 
 def generate_random_word(my_list):
@@ -41,8 +39,7 @@ def check_guess(random_word, guess):
 def fill_underscore(index_list, underscore, guess):
     underscore = list(underscore)
     for index in index_list:
-        del underscore[index]
-        underscore.insert(index, guess)
+        underscore[index] = guess
     underscore = ''.join(underscore)
     return underscore
 
@@ -51,7 +48,7 @@ def main():
     random_word = generate_random_word(read_file("lista.txt"))
     underscore = print_underscore(random_word)
     counter = 0
-    while counter <= len(random_word):
+    while counter < len(random_word):
         guess = get_guess()
         index_list = check_guess(random_word, guess)
         print(fill_underscore(index_list, underscore, guess))
